@@ -1,0 +1,108 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-250);
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+
+    section {
+        display: flex;
+        gap: 8px;
+
+        button {
+            text-transform: inherit;
+        }
+    }
+
+    section:first-of-type {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .logoContainer {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 1.125rem;
+                color: var(--primary-color);
+                position: relative;
+
+                &::before,
+                &::after {
+                    border-radius: 4px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &::before {
+                    opacity: .1;
+                    background-color: currentColor;
+                }
+
+                &::after {
+                    opacity: .15;
+                    box-shadow: inset 0 0 0 1px currentColor;
+                }
+            }
+
+            h2 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+        }
+
+        .divider {
+            margin-top: 4px;
+            margin-left: 4px;
+            opacity: .2;
+            height: 28px;
+            width: 2px;
+            background-color: var(--gray-450);
+        }
+    }
+
+    section:last-of-type {
+        button {
+            height: 32px;
+        }
+
+        .searchIdeasButton {
+            min-width: 32px;
+            margin-right: 8px;
+            color: var(--gray-650);
+            background-color: var(--gray-100);
+
+            .placeholder {
+                margin-right: 32px;
+            }
+
+            span:first-of-type {
+                margin: 0 4px;
+            }
+        }
+
+        .loginButton {
+            border: 1px solid var(--gray-250);
+        }
+
+        .signUpButton {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+    }
+}

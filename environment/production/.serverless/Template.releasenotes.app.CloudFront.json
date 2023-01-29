@@ -1,0 +1,85 @@
+{
+  "id": "E14VAP1CG6ZFVW",
+  "arn": "arn:aws:cloudfront::079586371513:distribution/E14VAP1CG6ZFVW",
+  "url": "https://d4qj4i7xhbh8h.cloudfront.net",
+  "region": "us-east-1",
+  "enabled": true,
+  "comment": "Release Notes APP",
+  "aliases": [
+    "*.releasenotes.app"
+  ],
+  "priceClass": "PriceClass_All",
+  "origins": [
+    {
+      "url": "http://releasenotes-app-prod.s3.us-east-1.amazonaws.com",
+      "private": true,
+      "pathPatterns": {
+        "_next/static/*": {
+          "minTTL": 0,
+          "defaultTTL": 86400,
+          "maxTTL": 31536000,
+          "forward": {
+            "headers": "none",
+            "cookies": "none",
+            "queryString": false
+          }
+        },
+        "static/*": {
+          "minTTL": 0,
+          "defaultTTL": 86400,
+          "maxTTL": 31536000,
+          "forward": {
+            "headers": "none",
+            "cookies": "none",
+            "queryString": false
+          }
+        },
+        "_next/data/*": {
+          "minTTL": 0,
+          "defaultTTL": 864000,
+          "maxTTL": 864000,
+          "allowedHttpMethods": [
+            "HEAD",
+            "GET"
+          ],
+          "forward": {
+            "cookies": "none"
+          },
+          "lambda@edge": {
+            "origin-request": "arn:aws:lambda:us-east-1:079586371513:function:releasenotes-app-prod-next-default:8",
+            "origin-response": "arn:aws:lambda:us-east-1:079586371513:function:releasenotes-app-prod-next-default:8"
+          }
+        }
+      }
+    }
+  ],
+  "errorPages": [],
+  "defaults": {
+    "minTTL": 0,
+    "defaultTTL": 0,
+    "maxTTL": 31536000,
+    "forward": {
+      "headers": [
+        "CloudFront-Is-Desktop-Viewer",
+        "CloudFront-Is-Mobile-Viewer",
+        "CloudFront-Is-Tablet-Viewer"
+      ],
+      "cookies": "all",
+      "queryString": true
+    },
+    "allowedHttpMethods": [
+      "HEAD",
+      "DELETE",
+      "POST",
+      "GET",
+      "OPTIONS",
+      "PUT",
+      "PATCH"
+    ],
+    "lambda@edge": {
+      "origin-request": "arn:aws:lambda:us-east-1:079586371513:function:releasenotes-app-prod-next-default:8",
+      "origin-response": "arn:aws:lambda:us-east-1:079586371513:function:releasenotes-app-prod-next-default:8"
+    },
+    "compress": true
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "name": "releasenotes.app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "prebuild": "rimraf .next",
+    "dev": "next dev",
+    "start:staging": "npm run build:staging && npm run start",
+    "start:production": "npm run build:production && npm run start",
+    "build:staging": "npm run build",
+    "build:production": "npm run build",
+    "deploy:staging": "npm run build:staging && cd environment/staging && sls",
+    "deploy:production": "npm run build:production && cd environment/production && sls",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "eslint:prod": "eslint --max-warnings 0 'src/**/*.{ts,tsx}' 'e2e/**/*.{ts,tsx}' --config .eslintrc.production.js --fix",
+    "eslint:test": "eslint --max-warnings 0 'src/**/*.{ts,tsx}' 'e2e/**/*.{ts,tsx}' --config .eslintrc.production.js --fix",
+    "eslint": "eslint --max-warnings 0 'src/**/*.{ts,tsx}' --config .eslintrc.production.js --fix",
+    "tslint": "tsc -p tsconfig.json --strict",
+    "stylelint": "stylelint **.scss --syntax=scss --fix",
+    "prettier": "prettier -l 'src/**/*' 'e2e/**/*'",
+    "prettier:fix": "prettier -l 'src/**/*' 'e2e/**/*' --write",
+    "lint:styles": "stylelint **.scss",
+    "lint:fix:styles": "stylelint --fix **.scss",
+    "deploy": "npm i && npm run prebuild && npm run build && npm run start",
+    "commit": "exec < /dev/tty && node_modules/.bin/cz --hook || true",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": "16.15.0",
+    "npm": "8.5.5"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-do-expressions": "^7.18.6",
+    "@babel/plugin-transform-react-display-name": "^7.18.6",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.88",
+    "@mui/material": "^5.8.6",
+    "@mui/styled-engine-sc": "^5.8.0",
+    "@mui/x-data-grid": "^5.12.3",
+    "@sls-next/serverless-component": "^3.7.0",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "axios": "^0.27.2",
+    "babel-plugin-add-react-displayname": "^0.0.5",
+    "ci": "^2.2.0",
+    "classnames": "^2.3.1",
+    "cpf-cnpj-validator": "^1.0.3",
+    "date-fns": "^2.28.0",
+    "framer-motion": "^6.3.16",
+    "js-cookie": "^3.0.1",
+    "logrocket": "^3.0.1",
+    "logrocket-react": "^5.0.1",
+    "next": "12.2.0",
+    "next-intl": "^2.7.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-input-mask": "^2.0.4",
+    "react-intersection-observer": "^9.3.5",
+    "sharp": "^0.30.7",
+    "styled-components": "^5.3.5",
+    "sweetalert2": "^11.4.19",
+    "sweetalert2-react-content": "^5.0.1",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@next/eslint-plugin-next": "^12.2.0",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.207",
+    "@types/js-cookie": "^3.0.2",
+    "@types/logrocket-react": "^3.0.0",
+    "@types/mui-datatables": "^3.7.9",
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@types/react-input-mask": "^3.0.1",
+    "@types/styled-components": "^5.1.25",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^17.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.2.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.5.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "rimraf": "3.0.2",
+    "sass": "^1.53.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
+    "stylelint-z-index-value-constraint": "^1.2.0",
+    "ts-node": "^10.8.1",
+    "typescript": "4.7.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "prepare-commit-msg": "exec < /dev/tty && node_modules/.bin/cz --hook || true"
+  },
+  "lint-staged": {
+    "next-lint": [
+      "next lint"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "eslint --max-warnings 0 'src/**/*.{ts,tsx}' --config .eslintrc.production.js --fix",
+      "prettier -l 'src/**/*' 'e2e/**/*' --write",
+      "bash -c tsc -p tsconfig.json --strict --noEmit",
+      "git add"
+    ],
+    "src/**/*.js": [
+      "eslint --max-warnings 0 'src/**/*.{js}' --config .eslintrc.production.js --fix",
+      "prettier -l 'src/**/*' 'e2e/**/*' --write",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint **.css --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint **.scss --syntax=scss --fix",
+      "git add"
+    ]
+  }
+}

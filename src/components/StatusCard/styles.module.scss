@@ -1,0 +1,35 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    background-color: var(--white);
+    border: 1px solid var(--gray-250);
+    border-radius: 4px;
+    gap: 20px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+    width: 380px;
+    height: fit-content;
+
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .markerColor {
+            border: 2px solid;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        h3,
+        .quantityOfItemsContainer {
+            font-size: .9375rem;
+        }
+
+        .quantityOfItemsContainer {
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+    }
+}

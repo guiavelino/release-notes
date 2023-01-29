@@ -1,0 +1,36 @@
+.avatarButtonContainer {
+    position: relative;
+    z-index: 4;
+
+    .avatarButton {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+    }
+
+    .menu {
+        width: 240px;
+        position: absolute;
+        top: 52px;
+        right: 0px;
+        border: 1px solid var(--gray-250);
+        background-color: var(--white);
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .2s;
+        border-radius: 4px;
+        box-shadow: 0 0 var(--black), 0 0 var(--black), 4px 8px 24px rgba(0, 0, 0, .08);
+
+        li {
+            margin: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .8125rem;
+            color: var(--gray-450);
+        }
+
+        hr {
+            margin: 0;
+        }
+    }
+}

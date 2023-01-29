@@ -1,0 +1,18 @@
+.sideBar {
+    .listItemButton {
+        margin-bottom: 4px;
+        border-radius: 4px;
+        
+        &.active {
+            background-color: rgba(0, 0, 0, 0.04);
+            
+            .text > span {
+                font-weight: 600;
+            }
+        }
+
+        .text > span {
+            font-size: 0.8125rem;
+        }
+    }
+}

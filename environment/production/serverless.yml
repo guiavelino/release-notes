@@ -1,0 +1,39 @@
+name: releasenotes.app
+
+releasenotes.app:
+  component: '@sls-next/serverless-component@v3.8.0-alpha.0'
+  inputs:
+    nextConfigDir: ../../
+    description: 'Release Notes APP'
+    # domain: ['aplication', 'releasenotes.app']
+    bucketName: 'releasenotes-app-prod'
+    verbose: true
+    name:
+      apiLambda: releasenotes-app-prod-next-api
+      defaultLambda: releasenotes-app-prod-next-default
+      imageLambda: releasenotes-app-prod-next-image
+      regenerationLambda: releasenotes-app-prod-next-regen
+    cloudfront:
+      comment: 'Release Notes APP'
+      distributionId: 'E14VAP1CG6ZFVW'
+      aliases: ["*.releasenotes.app"]
+      certificate:
+        cloudFrontDefaultCertificate: false
+        acmCertificateArn: 'arn:aws:acm:us-east-1:079586371513:certificate/3a7e3721-b0d6-4d99-aed2-966a03512148'
+        minimumProtocolVersion: 'TLSv1.2_2021'
+      defaults:
+        forward:
+          headers: [CloudFront-Is-Desktop-Viewer, CloudFront-Is-Mobile-Viewer, CloudFront-Is-Tablet-Viewer]
+      _next/data/*:
+        minTTL: 0
+        maxTTL: 864000
+        defaultTTL: 864000
+        forward:
+          cookies: 'none'
+    timeout:
+      defaultLambda: 20
+      apiLambda: 15
+      imageLambda: 15
+    memory:
+      defaultLambda: 512
+      apiLambda: 512

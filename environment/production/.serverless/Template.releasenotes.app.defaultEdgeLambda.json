@@ -1,0 +1,17 @@
+{
+  "name": "releasenotes-app-prod-next-default",
+  "hash": "xjTvApKel7fYPJyAGZ1YTjRjikWMcTxCc9fljemu4ow=",
+  "description": "Release Notes APP",
+  "memory": 512,
+  "timeout": 20,
+  "code": "/home/carrilhos/projects/releasenotes/app/.serverless_nextjs/default-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::079586371513:role/hlr35gl-d9im6tm"
+  },
+  "arn": "arn:aws:lambda:us-east-1:079586371513:function:releasenotes-app-prod-next-default",
+  "region": "us-east-1"
+}

@@ -1,0 +1,162 @@
+.card {
+    padding: 80px 40px 0;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        & > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .categoryContainer {
+                display: flex;
+                gap: 8px;
+
+                span {
+                    font-size: .75rem;
+                    padding: 4px 12px;
+                    margin-left: auto;
+                    position: relative;
+                    font-weight: 500;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        opacity: .16;
+                        background-color: currentColor;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+
+        & > .createdAt {
+            font-size: 0.8125rem;
+            color: var(--gray-450);
+        }
+    }
+
+    .descriptionContainer {
+        position: relative;
+        font-size: 1rem;
+        color: var(--gray-450);
+        margin: 24px 0;
+
+        .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            white-space: normal;
+            -webkit-box-orient: vertical;
+        }
+
+        .viewMore {
+            background-color: var(--white);
+            color: var(--gray-650);
+            padding-left: 12px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--blue-400);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .emojiContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+
+        button {
+            height: 28px;
+            width: 28px;
+        }
+       
+        .reactionButtonMenu {
+            position: relative;
+
+            .reactionsMenu {
+                background-color: var(--white);
+                border-radius: 32px;
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                position: absolute;
+                top: -52px;
+                right: 0px;
+                border: 1px solid var(--gray-100);
+                box-shadow: 0 0 var(--black), 0 0 var(--black), 4px 8px 24px rgba(0, 0, 0, .08);
+            }
+        }
+
+        .reactionButtonMenu > .reactionsMenu,
+        .reactions {
+            button {
+                background-color: var(--white);
+
+                &.active {
+                    border: 1px solid var(--primary-color);
+                }
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        .reactions {
+            button {
+                border: 1px solid var(--gray-100);
+
+                &:not(&:nth-child(1)) {
+                    margin-left: -8px;
+                }
+            }
+        }
+
+        .reactionCount {
+            font-size: .6875rem;
+            color: var(--gray-450);
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .card {
+        padding: 40px 24px 20px;
+
+        header {
+            & > div {
+                flex-direction: column;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 40px 16px 20px;
+    }
+}

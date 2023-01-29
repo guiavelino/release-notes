@@ -1,0 +1,56 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    height: 88px;
+    background-color: var(--white);
+    border: 1px solid var(--gray-250);
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: .2s;
+    gap: 8px;
+
+    &:hover {
+        background-color: var(--gray-225);
+    }
+
+    .cardContainer {
+        display: flex;
+        gap: 8px;
+
+        .voteCountContainer {
+            font-weight: 700;
+            font-size: 1rem;
+            background-color: var(--white);
+            border: 2px solid var(--gray-250);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            font-size: .875rem;
+            font-weight: 500;
+            width: calc(100% - 48px);
+        }
+    }
+
+    .topicsContainer {
+        display: flex;
+        gap: 8px;
+
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: .6875rem;
+            color: var(--gray-450);
+        }
+    }
+}

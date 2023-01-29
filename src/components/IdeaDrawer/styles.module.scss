@@ -1,0 +1,194 @@
+.drawer > div:nth-child(3) {
+    width: 50%;
+    padding: 56px 0;
+    
+    .closeButton {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+
+    .ideaContent {
+        display: flex;
+        gap: 20px;
+        padding: 0 40px;
+
+        .voteCountContainer {
+            font-weight: 600;
+            background-color: var(--white);
+            border: 2px solid var(--gray-250);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 68px;
+            cursor: pointer;
+            transition-duration: .4s;
+            position: relative;
+            font-size: 1.125rem;
+    
+            .icon {
+                top: 0;
+                position: absolute;
+                color: var(--gray-250);
+            }
+    
+            &:hover {
+                border-color: var(--gray-650);
+                
+                .icon {
+                    color: var(--gray-650);
+                }
+            }
+        }
+    
+        section {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 80px);
+    
+            .title {
+                font-size: 1.125rem;
+            }
+    
+            .description {
+                font-size: .875rem;
+                color: var(--gray-450);
+            }
+    
+            .firstSectionInfo,
+            .secondSectionInfo {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--gray-450);
+                font-size: .6875rem;
+                margin-top: 12px;
+            }
+
+            .firstSectionInfo {
+                .authorName {
+                    font-weight: bolder;
+                    color: var(--black);
+                    font-size: .75rem;
+                }
+                
+                .separator {
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    background-color: var(--gray-450);
+                }
+
+                .avatarGroup {
+                    div {
+                        width: 24px;
+                        height: 24px;
+                        font-size: .75rem;
+                    }
+                }
+            }
+    
+            .secondSectionInfo {
+                .topicItem {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .statusContainer {
+                    padding: 0 8px;
+                    position: relative;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        opacity: .16;
+                        background-color: currentColor;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .textEditor {
+        margin: 60px 40px;
+    }
+
+    .commentCard {
+        display: flex;
+        background-color: var(--gray-225);
+        padding: 20px 40px;
+        gap: 20px;
+
+        .commentContainer {
+            color: var(--gray-450);
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            gap: 8px;
+
+            .authorName {
+                font-weight: bolder;
+                color: var(--black);
+                font-size: .75rem;
+            }
+
+            .content {
+                font-size: .875rem;
+            }
+
+            .infoSection {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: .6875rem;
+
+                .separator {
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    background-color: var(--gray-450);
+                }
+
+                .reply {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            .textEditor {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .drawer > div:nth-child(3) {
+        width: 100%;
+
+        .closeButton {
+            right: 20px;
+        }
+
+        .ideaContent, 
+        .commentCard {
+            padding: 0 20px;
+        }
+
+        & > .textEditor {
+            margin: 60px 20px;
+        }
+    }
+}
